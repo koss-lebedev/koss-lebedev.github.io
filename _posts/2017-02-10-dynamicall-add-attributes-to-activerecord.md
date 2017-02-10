@@ -1,3 +1,14 @@
+---
+title: How to dynamically add attributes to your ActiveRecord models
+tags:
+- ActiveRecord
+- Ruby
+- Rails
+- active_dynamic
+---
+
+![](<../images/dynamic-attributes.png>)
+
 Sometimes we need to build an application that has domain models that we don’t know all the properties of. A good example of such application is a CRM system for tracking business contacts. In the center of it is a Contact model that has properties like name, email, phone number, etc. But can we know beforehand all the properties our Contact model will need to have?  If we want to create the application for a wide audience, it can be difficult to predict. Solution? Allow users to add more properties to Contact model in the runtime! We’ll do exactly that in this tutorial.
 
 You can find the complete source of the demo application [here.](https://github.com/koss-lebedev/active_dynamic_demo) I won’t be covering the basic setup for this application (which, indeed, is very basic), and instead, focus on interesting parts.
