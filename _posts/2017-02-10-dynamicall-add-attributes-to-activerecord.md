@@ -151,4 +151,6 @@ end
 
 Now when we create or update a Contact record, we can use contact_params hash that will include all of our dynamic attributes.
 
+* * *
 
+If you have any questions, hit me up on [twitter](https://twitter.com/koss_lebedev) or [add an issue](https://github.com/koss-lebedev/active_dynamic/issues) on GitHub. Thanks for reading!
