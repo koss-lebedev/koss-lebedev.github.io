@@ -10,8 +10,15 @@
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
-    <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}/custom">Custom link</a>
     <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}/about/">About</a>
+
+    <div class="sidebar-nav-item">My Projects</div>
+    <a class="sidebar-nav-item" href="http://www.vocabby.io/" target="_blank">Language learning app</a>
+    <div class="sidebar-nav-item">OSS</div>
+    <a class="sidebar-nav-item" href="https://github.com/koss-lebedev/bootstrap-duration-picker" target="_blank">Duration picker plugin</a>
+    <a class="sidebar-nav-item" href="https://github.com/koss-lebedev/paysimple-ruby" target="_blank">PaySimple API client</a>
+    <a class="sidebar-nav-item" href="https://github.com/koss-lebedev/active_dynamic" target="_blank">Active_dynamic gem</a>
+
 
     {% assign posts_list = site.posts | sort:"url" %}
     {% for node in posts_list %}
