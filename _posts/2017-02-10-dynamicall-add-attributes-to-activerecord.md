@@ -9,14 +9,14 @@ tags:
 
 ![](<../images/dynamic-attributes.png>)
 
-Sometimes we need to build an application that has domain models that we don’t know all the properties of. A good example of such application is a CRM system for tracking business contacts. In the center of it is a Contact model that has properties like name, email, phone number, etc. But can we know beforehand all the properties our Contact model will need to have?  If we want to create the application for a wide audience, it can be difficult to predict. Solution? Allow users to add more properties to Contact model in the runtime! We’ll do exactly that in this tutorial.
+Sometimes we need to build an application that has domain models that we don’t know all the attributes of. A good example of such application is a system for tracking business contacts. In the center of it is a Contact model that has attributes like name, email, phone number, etc. But can we know beforehand all the attributes our Contact model will need to have?  If we want to create the application for a wide audience, it can be difficult to predict. Solution? Allow users to add more attributes to Contact model in the runtime! We’ll do exactly that in this tutorial.
 
 You can find the complete source of the demo application [here.](https://github.com/koss-lebedev/active_dynamic_demo) I won’t be covering the basic setup for this application (which, indeed, is very basic), and instead, focus on interesting parts.
 
 Configuring model
 -----------------
 
-First thing first, let’s install [active_dynamic](https://github.com/koss-lebedev/active_dynamic) gem. I wrote this gem while working on the application similar to the one described in this article, so the gem will do most of the heavy-lifting for us. Start by adding it to your Gemfile and running:
+First thing first, let’s install [active_dynamic](https://github.com/koss-lebedev/active_dynamic) gem. I wrote this gem while working on the application similar to the one we'll build in this tutorial, and the gem will do most of the heavy-lifting for us. Start by adding it to your Gemfile and running:
 
 ```shell
 rails generate active_dynamic
@@ -29,17 +29,18 @@ Next, we need to include active_dynamic into our Contact model so that the gem k
 
 ```ruby
 class Contact < ActiveRecord::Base  
-  include ActiveDynamic::HasDynamicAttributes
+  has_dynamic_attributes
+  
   # ... other code
 end
 ```
 
-Now we need to tell active_dynamic where to find the information about properties it has to add to Contact model. To do that, we create a provider class that has to comply with two rules:
+Now we need to tell active_dynamic where to find the information about attributes it has to add to Contact model. To do that, we create a provider class that has to comply with two rules:
 
 - it needs to accept a model class as the only constructor argument;
 - it needs to have a `call` method that returns an array of attribute definitions;
 
-Attribute definition is just a helper class that allows us to specify a display name of an attribute that will be dynamically added to our model, and, optionally, its data type, a system name, and a default value. Here’s a simple provider class that defines `age` and `description` attributes:
+Attribute definition is just a helper class that allows us to specify a display name of an attribute that will be dynamically added to our model, and, optionally, its data type, a system name, presence validation, and a default value. Here’s a simple provider class that defines `age` and `description` attributes:
 
 ```ruby
 class ContactAttributeProvider
@@ -69,7 +70,8 @@ class ContactAttributeProvider
   def call    
     ContactAttribute.all.map do |attr|
       ActiveDynamic::AttributeDefinition.new(
-        attr.name, datatype: attr.datatype)
+        attr.name, datatype: attr.datatype,
+        required: attr.required?)
     end 
   end
 end
@@ -80,7 +82,7 @@ Finally, we need to tell active_dynamic to use this provider class. In the confi
 ```ruby
 config.provider_class = CustomAttributeResolver
 ```
-That’s it! Now every time an instance of Contact is created, it will have whatever attributes you listed in your attribute provider class. So now we can use it like this:
+Now every time an instance of Contact is created, it will have whatever attributes you listed in your attribute provider class. So now we can use it like this:
 
 ```ruby
 contact = Contact.new
@@ -150,6 +152,8 @@ end
 ```
 
 Now when we create or update a Contact record, we can use contact_params hash that will include all of our dynamic attributes.
+
+That’s it! Now we have a complete solution that allows us to add new attributes for Contact model as well as set their values without making changes in the source code.
 
 * * *
 
