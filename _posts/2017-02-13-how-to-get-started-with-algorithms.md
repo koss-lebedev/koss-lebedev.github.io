@@ -1,3 +1,11 @@
+---
+title: How to get started with algorithms to be a better developer
+tags:
+- programming
+- algorithms
+- meta
+---
+
 As a developer, for a long time I resisted the idea that solving algorithmic challenges was something worth doing. I have started and stopped learning about sorting and searching and trees and graphs a countless number of times, every time with the same outcome — I was back to the projects where none of these algorithms were applicable, and the knowledge quickly faded away due to a lack of use.
 
 But recently I decided to give it another try, and this time was a success. I used a new approach that helped me to stay on track long enough to see the real benefit of solving algorithmic challenges— it makes you think more creatively. It lets you see familiar problems from different angles and come up with better solutions. It builds the confidence that you can tackle new and unfamiliar problems. And as a result, it makes you a better developer.
