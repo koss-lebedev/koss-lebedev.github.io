@@ -1,9 +1,8 @@
 ---
-title: How to get started with algorithms to be a better developer
+title: Start learning algorithms to become a better developer
 tags:
 - programming
 - algorithms
-- meta
 ---
 
 ![](<../images/algorithms.jpg>)
