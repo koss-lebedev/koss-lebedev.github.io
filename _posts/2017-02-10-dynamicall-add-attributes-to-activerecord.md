@@ -1,7 +1,7 @@
 ---
 title: How to dynamically add attributes to your ActiveRecord models
 tags:
-- Ruby
+- ruby
 ---
 
 ![](<../images/dynamic-attributes.png>)

@@ -13,7 +13,7 @@ Fail-safe wrapper for local storage. Provides in-memory store implementation whe
 
 ## active_dynamic
 
-<div class="tag tag-ruby">ruby</div>
+<span class="tag tag-ruby">ruby</span>
 
 Gems that allows to add attributes to ActiveRecord models dynamically.
 
@@ -21,7 +21,7 @@ Gems that allows to add attributes to ActiveRecord models dynamically.
 
 ## html_to_image
 
-<div class="tag tag-elixir">elixir</div>
+<span class="tag tag-elixir">elixir</span>
 
 Wrapper around `wkhtmltoimage` for converting HTML into images.
 
@@ -29,7 +29,7 @@ Wrapper around `wkhtmltoimage` for converting HTML into images.
 
 ## bootstrap-duration-picker
 
-<div class="tag tag-javascript">javascript</div>
+<span class="tag tag-javascript">javascript</span>
 
 Javascript library for selecting time duration.
 
@@ -37,7 +37,7 @@ Javascript library for selecting time duration.
 
 ## paysimple-ruby
 
-<div class="tag tag-ruby">ruby</div>
+<span class="tag tag-ruby">ruby</span>
 
 Client library for accessing PaySimple API v4.0.
 
