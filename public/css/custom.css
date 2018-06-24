@@ -1,0 +1,30 @@
+.post-date {
+  margin-bottom: 0.5rem;
+}
+
+.post-tags {
+  margin-bottom: 1rem;
+}
+
+.post-tags>span {
+  text-transform: lowercase;
+  background: #00cbff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.2rem;
+  color: white;
+  font-size: .8rem;
+  margin-right: 0.5rem;
+}
+
+
+/* Highlights.JS overrides */
+
+pre.highlight {
+  padding: 0;
+  overflow-y: auto;
+}
+
+code.hljs {
+  width: max-content;
+  min-width: 100%;
+}
