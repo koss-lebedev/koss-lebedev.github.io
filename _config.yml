@@ -1,10 +1,10 @@
-title:              koss-dev
+title:              Personal blog
 tagline:            web development blog
 description:        Tutorials and tips about web development, mostly Ruby and JS stuff.
-url:                https://koss-lebedev.github.io
+url:                https://konstantinlebedev.com
 
 author:
-  name:             Constantine Lebedev
+  name:             Konstantin Lebedev
   url:              https://twitter.com/koss_lebedev
   email:            koss.lebedev@gmail.com
 
