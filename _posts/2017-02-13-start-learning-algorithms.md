@@ -1,7 +1,6 @@
 ---
 title: Start learning algorithms to become a better developer
 tags:
-- programming
 - algorithms
 ---
 

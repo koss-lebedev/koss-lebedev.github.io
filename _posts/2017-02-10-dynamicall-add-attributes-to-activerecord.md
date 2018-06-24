@@ -1,10 +1,7 @@
 ---
 title: How to dynamically add attributes to your ActiveRecord models
 tags:
-- ActiveRecord
 - Ruby
-- Rails
-- active_dynamic
 ---
 
 ![](<../images/dynamic-attributes.png>)
@@ -28,9 +25,9 @@ This will copy migration and configuration files to your project and run the mig
 Next, we need to include active_dynamic into our Contact model so that the gem knows that Contact can have dynamically added attributes:
 
 ```ruby
-class Contact < ActiveRecord::Base  
+class Contact < ActiveRecord::Base
   has_dynamic_attributes
-  
+
   # ... other code
 end
 ```
@@ -46,7 +43,7 @@ Attribute definition is just a helper class that allows us to specify a display 
 class ContactAttributeProvider
 
   def initialize(model)
-    @model = model    
+    @model = model
   end
 
   def call
@@ -63,16 +60,16 @@ To make them truly dynamic, we can load attribute definitions from an external s
 
 ```ruby
 class ContactAttributeProvider
-  
-  def initialize(model)    
-    @model = model  
-  end   
-  def call    
+
+  def initialize(model)
+    @model = model
+  end
+  def call
     ContactAttribute.all.map do |attr|
       ActiveDynamic::AttributeDefinition.new(
         attr.name, datatype: attr.datatype,
         required: attr.required?)
-    end 
+    end
   end
 end
 ```
@@ -86,16 +83,16 @@ Now every time an instance of Contact is created, it will have whatever attribut
 
 ```ruby
 contact = Contact.new
- 
-# first_name is a regular attribute mapped to 
+
+# first_name is a regular attribute mapped to
 # a column in contacts table
 contact.first_name = 'John'
- 
+
 # age attribute was added dynamically
 contact.age = 27
- 
+
 contact.save
- 
+
 # we can also do this
 second_contact = Contact.new(first_name: 'Jane', age: 25)
 ```
@@ -119,7 +116,7 @@ def dynamic_attribute_inputs(form, model)
 
   safe_join inputs
 end
- 
+
 def datatype_mapping(type)
   case type
     when ActiveDynamic::DataType::Text then :text
@@ -137,7 +134,7 @@ It iterates over dynamic attributes of a model and uses `datatype` property that
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= dynamic_attribute_inputs(f, contact) %>
- 
+
   <%= f.button :submit %>
 <% end %>
 ```

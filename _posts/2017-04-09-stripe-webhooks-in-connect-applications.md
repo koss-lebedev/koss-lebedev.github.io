@@ -1,9 +1,7 @@
 ---
 title: Stripe webhooks in Connect applications
 tags:
-- programming
-- stripe
-- webhooks
+- integrations
 - ruby
 ---
 

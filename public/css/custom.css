@@ -6,9 +6,9 @@
   margin-bottom: 1rem;
 }
 
-.post-tags>span {
+.tag {
   text-transform: lowercase;
-  background: #00cbff;
+  background: #a2a2a2;
   padding: 0.3rem 0.6rem;
   border-radius: 0.2rem;
   color: white;
@@ -16,6 +16,21 @@
   margin-right: 0.5rem;
 }
 
+.tag-typescript {
+  background: #3e96b9;
+}
+
+.tag-ruby {
+  background: #d84a44;
+}
+
+.tag-javascript {
+  background: #f7d200;
+}
+
+.tag-elixir {
+  background: #970ca5;
+}
 
 /* Highlights.JS overrides */
 
