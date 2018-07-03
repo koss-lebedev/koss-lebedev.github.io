@@ -3,6 +3,7 @@ title: Stripe webhooks in Connect applications
 tags:
 - integrations
 - ruby
+image: stripe-webhooks.png
 ---
 
 ![](<../images/stripe-webhooks.png>)
