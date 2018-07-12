@@ -12,7 +12,7 @@ title: Home
 </div>
 
 <div class="posts">
-  {% for post in paginator.posts %}
+  {% for post in posts %}
   <div class="post">
     <h2 class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">
@@ -21,6 +21,9 @@ title: Home
     </h2>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
+
   </div>
   {% endfor %}
 </div>
+
+
