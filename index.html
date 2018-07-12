@@ -9,10 +9,15 @@ title: Home
   </div>
   <h1 class="owner-name">Konstantin Lebedev</h1>
   <small class="owner-title">Full-stack developer</small>
+  <div class="owner-social-items">
+    <div class="owner-social-item"></div>
+    <div class="owner-social-item"></div>
+    <div class="owner-social-item"></div>
+  </div>
 </div>
 
 <div class="posts">
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
   <div class="post">
     <h2 class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">
@@ -25,5 +30,3 @@ title: Home
   </div>
   {% endfor %}
 </div>
-
-

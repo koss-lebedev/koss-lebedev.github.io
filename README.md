@@ -13,3 +13,10 @@ License
 -------
 
 Open sourced under the [MIT license](<LICENSE.md>).
+
+Run locally
+-----------
+
+```
+bundle exec jekyll serve
+```
