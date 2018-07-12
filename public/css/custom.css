@@ -12,6 +12,11 @@
   text-align: center;
 }
 
+.owner-title {
+  text-align: center;
+  display: block;
+}
+
 .post {
   margin-bottom: 1rem;
 }

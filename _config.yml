@@ -11,7 +11,6 @@ author:
 # GitHub Pages / Jekyll configuration
 baseurl:            ''
 permalink:          /:title/
-paginate:           5
 defaults:
   -
     scope:
