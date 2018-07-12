@@ -3,6 +3,13 @@ layout: default
 title: Home
 ---
 
+<div class="owner">
+  <div class="owner-avatar">
+    <img src="/images/avatar.jpg" alt="KL">
+  </div>
+  <h3 class="owner-name">Konstantin Lebedev</h3>
+</div>
+
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
@@ -14,13 +21,13 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    <div class="post-tags">
+    <!-- <div class="post-tags">
       {% for tag in post.tags %}
         <span class="tag tag-{{tag}}">{{ tag }}</span>
       {% endfor %}
-    </div>
+    </div> -->
 
-    {{ post.content | strip_html | truncatewords: 50 }}
+    <!-- {{ post.content | strip_html | truncatewords: 50 }} -->
 
   </div>
   {% endfor %}
